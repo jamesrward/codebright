@@ -11,7 +11,16 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+// Bind route parameters.
+Route::model('game', 'Game');
+
+// Show pages.
+Route::get('/', 'GamesController@index');
+//Route::get('/create', 'GamesController@create');
+//Route::get('/edit/{game}', 'GamesController@edit');
+//Route::get('/delete/{game}','GamesController@delete');
+
+// Handle form submissions
+//Route::post('/create', 'GamesController@handleCreate');
+//Route::post('/edit', 'GamesController@handleEdit');
+//Route::post('delete', 'GamesController@handleDelete');
